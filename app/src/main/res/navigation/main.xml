@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/mianFragment">
+
+    <fragment
+        android:id="@+id/mianFragment"
+        android:name="com.example.nav_component.MianFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_mian" >
+        <action
+            android:id="@+id/action_mianFragment_to_recipientFragment"
+            app:destination="@id/recipientFragment" />
+        <action
+            android:id="@+id/action_mianFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <action
+            android:id="@+id/action_mianFragment_to_viewBalannceFragment"
+            app:destination="@id/viewBalannceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.example.nav_component.TransactionFragment"
+        android:label="transaction"
+        tools:layout="@layout/fragment_transaction" />
+    <fragment
+        android:id="@+id/recipientFragment"
+        android:name="com.example.nav_component.RecipientFragment"
+        android:label="fragment_recipient"
+        tools:layout="@layout/fragment_recipient" >
+        <action
+            android:id="@+id/action_recipientFragment_to_specifyAmountFragment"
+            app:destination="@id/specifyAmountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewBalannceFragment"
+        android:name="com.example.nav_component.ViewBalannceFragment"
+        android:label="balannce"
+        tools:layout="@layout/fragment_view_balannce" />
+    <fragment
+        android:id="@+id/specifyAmountFragment"
+        android:name="com.example.nav_component.SpecifyAmountFragment"
+        android:label="amount"
+        tools:layout="@layout/fragment_specify_amount" >
+        <action
+            android:id="@+id/action_specifyAmountFragment_to_conformartionFragment"
+            app:destination="@id/conformartionFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/conformartionFragment"
+        android:name="com.example.nav_component.ConformartionFragment"
+        android:label="confirmation"
+        tools:layout="@layout/fragment_conformartion" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="amount"
+            app:argType="string" />
+    </fragment>
+</navigation>
